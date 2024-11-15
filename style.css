@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #a3a7aa;
+  background-image: url(./img/background1.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Arial", sans-serif;
+  max-width: 100%;
+  background-position: 50% 70%;
+}
+
+.game-container {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#game {
+  position: relative;
+  width: 800px;
+  height: 200px;
+  background-color: #e5e5e5;
+  background-image: url(./img/background.jpeg);
+  border: 2px solid #333;
+  overflow: hidden;
+}
+
+#skate-dino {
+  position: absolute;
+  bottom: 10px;
+  left: 60px;
+  width: 50px;
+  height: 50px;
+  background-image: url("./img/dino.jpeg"); /* Dinosaur on skate */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#obstacle {
+  position: absolute;
+  bottom: 10px;
+  right: -50px;
+  width: 60px;
+  height: 60px;
+  background-image: url("./img/meteoro.png"); /* Cactus obstacle */
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: rotate(45deg);
+}
+
+@keyframes jump {
+  0% {
+    bottom: 20px;
+  }
+  50% {
+    bottom: 120px;
+  }
+  100% {
+    bottom: 20px;
+  }
+}
+
+.score {
+  margin-top: 20px;
+  font-size: 18px;
+}
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+  #game {
+    height: 30vh;
+  }
+
+  #skate-dino {
+    width: 10%;
+    height: 30%;
+  }
+
+  #obstacle {
+    width: 7%;
+    height: 30%;
+  }
+
+  .score {
+    font-size: 3vh;
+  }
+}
+
+@media (max-width: 480px) {
+  #game {
+    height: 35vh;
+  }
+
+  #skate-dino {
+    width: 12%;
+    height: 35%;
+  }
+
+  #obstacle {
+    width: 9%;
+    height: 35%;
+  }
+
+  .score {
+    font-size: 3.5vh;
+  }
+}

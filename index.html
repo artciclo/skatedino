@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dino do fim do mundo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>Dino do fim do mundo</h1>
+      <div id="game">
+        <div id="skate-dino"></div>
+        <div id="obstacle"></div>
+      </div>
+      <div class="score">
+        Pontuação: <span id="score">0</span>
+        <audio autoplay controls>
+          <source src="./sound/song.mp3" type="audio/mp3" />
+          Seu navegador não suporta a tag de áudio.
+        </audio>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <audio id="myAudio">
+      <source src="./sound/song.mp3" type="audio/mp3" />
+      Seu navegador não suporta a tag de áudio.
+    </audio>
+
+    <script>
+      window.onload = function () {
+        var audio = document.getElementById("myAudio");
+        audio.play();
+        // Função que detecta o pressionamento da tecla de seta para cima
+        window.addEventListener("keydown", function (event) {
+          if (event.key === "ArrowUp") {
+            // Detecta se a tecla pressionada é a seta para cima
+            var audio = document.getElementById("myAudio");
+            audio.play(); // Inicia a reprodução do áudio
+          }
+        });
+      };
+    </script>
+  </body>
+</html>
