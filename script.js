@@ -8,6 +8,19 @@ let gameInterval;
 const obstacleSpeed = 20; // Velocidade do movimento do obstáculo
 const maxScore = 10; // Pontuação máxima para vitória
 
+window.onload = function () {
+  var audio = document.getElementById("myAudio");
+  audio.play();
+
+  // Função que detecta o pressionamento da tecla de seta para cima
+  window.addEventListener("keydown", function (event) {
+    if (event.key === "ArrowUp") {
+      var audio = document.getElementById("myAudio");
+      audio.play(); // Inicia a reprodução do áudio
+    }
+  });
+};
+
 // Função para fazer o dinossauro pular
 function jump() {
   if (isJumping) return;
@@ -32,6 +45,7 @@ function moveObstacle() {
     if (score === maxScore) {
       clearInterval(gameInterval);
       alert("Parabéns! Você venceu com 10 pontos!");
+      pauseAudio(); // Pausar o áudio após vencer
       location.reload();
     }
 
@@ -42,17 +56,22 @@ function moveObstacle() {
     obstacle.style.right = `${obstacleLeft + 10}px`;
   }
 }
-
+// Função para pausar o áudio
+function pauseAudio() {
+  var audio = document.getElementById("myAudio");
+  audio.pause();
+}
 // Função para detectar colisão
 function checkCollision() {
   const dinoBottom = parseInt(window.getComputedStyle(dino).bottom);
   const obstacleLeft = parseInt(window.getComputedStyle(obstacle).right);
 
   // Verificar se o dinossauro colidiu com o obstáculo
-  if (obstacleLeft > 720 && obstacleLeft < 770 && dinoBottom < 50) {
+  if (obstacleLeft > 650 && obstacleLeft < 760 && dinoBottom < 50) {
     clearInterval(gameInterval);
     alert("Game Over! Pontuação final: " + score);
-    location.reload();
+    pauseAudio(); // Pausar o áudio após o game over
+    location.reload(); // Recarregar a página
   }
 }
 

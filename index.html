@@ -13,33 +13,12 @@
         <div id="skate-dino"></div>
         <div id="obstacle"></div>
       </div>
-      <div class="score">
-        Pontuação: <span id="score">0</span>
-        <audio autoplay controls>
-          <source src="./sound/song.mp3" type="audio/mp3" />
-          Seu navegador não suporta a tag de áudio.
-        </audio>
-      </div>
+      <div class="score">Pontuação: <span id="score">0</span></div>
     </div>
     <script src="script.js"></script>
     <audio id="myAudio">
       <source src="./sound/song.mp3" type="audio/mp3" />
       Seu navegador não suporta a tag de áudio.
     </audio>
-
-    <script>
-      window.onload = function () {
-        var audio = document.getElementById("myAudio");
-        audio.play();
-        // Função que detecta o pressionamento da tecla de seta para cima
-        window.addEventListener("keydown", function (event) {
-          if (event.key === "ArrowUp") {
-            // Detecta se a tecla pressionada é a seta para cima
-            var audio = document.getElementById("myAudio");
-            audio.play(); // Inicia a reprodução do áudio
-          }
-        });
-      };
-    </script>
   </body>
 </html>
