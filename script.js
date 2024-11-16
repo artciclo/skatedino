@@ -14,7 +14,7 @@ window.onload = function () {
 
   // Função que detecta o pressionamento da tecla de seta para cima
   window.addEventListener("keydown", function (event) {
-    if (event.key === "ArrowUp") {
+    if (event.key === "ArrowUp" || event.code === "Space") {
       var audio = document.getElementById("myAudio");
       audio.play(); // Inicia a reprodução do áudio
     }
@@ -88,6 +88,16 @@ document.addEventListener("keydown", (e) => {
   if (e.code === "Space" || e.key === " " || e.key === "ArrowUp") {
     jump();
   }
+});
+
+// Controle para clique do mouse
+document.addEventListener("click", () => {
+  jump();
+});
+
+// Controle para toque em dispositivos móveis
+document.addEventListener("touchstart", () => {
+  jump();
 });
 
 // Inicializa o jogo
