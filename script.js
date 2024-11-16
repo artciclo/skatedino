@@ -96,9 +96,14 @@ document.addEventListener("click", () => {
 });
 
 // Controle para toque em dispositivos móveis
-document.addEventListener("touchstart", () => {
-  jump();
-});
+document.addEventListener(
+  "touchstart",
+  (e) => {
+    e.preventDefault(); // Evita o comportamento padrão (como o scroll)
+    jump();
+  },
+  { passive: false }
+); // Define o evento como não passivo para permitir o preventDefault()
 
 // Inicializa o jogo
 startGame();
